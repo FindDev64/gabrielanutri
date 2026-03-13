@@ -1,12 +1,18 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common'; // Importe isso
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  standalone: true, // Garanta que isso seja true
+  imports: [CommonModule], // Adicione o CommonModule aqui
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
-export class App {
-  protected readonly title = signal('linknutri');
+export class AppComponent {
+  // Verifique se o array 'links' está definido aqui dentro
+  links = [
+    { label: 'Método CARB', url: 'https://...' },
+    { label: 'Agende sua consulta', url: 'https://...' },
+    { label: 'Começar acompanhamento', url: 'https://...' }
+  ];
 }
